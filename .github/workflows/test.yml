@@ -41,7 +41,7 @@ jobs:
       - name: Yarn install
         run: yarn install --frozen-lockfile
 
-     - name: Prepare DB
+      - name: Prepare DB
         run: | # Pipe is important, adds line breaks
           cp config/database.github.yml config/database.yml
           bundle exec rails db:test:prepare
@@ -49,4 +49,3 @@ jobs:
         run: bundle exec rails test
       - name: Run system tests
         run: bundle exec rails test:system
-
